@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{af6de226-280a-454c-99ab-20b8dad695ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="headers">
+      <UniqueIdentifier>{bd732217-7730-4adc-8377-fbb9ee47948b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="kernels">
+      <UniqueIdentifier>{bf6ce1ee-540a-4232-af6a-7fc6764d420d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="gpu_structs">
+      <UniqueIdentifier>{c34b7fbb-1e32-4ff3-85ae-c131da5c5f3e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <CudaCompile Include="Main.cu">
+      <Filter>src</Filter>
+    </CudaCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Main.cuh">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="VectorAdd.cuh">
+      <Filter>kernels</Filter>
+    </ClInclude>
+    <ClInclude Include="Vec3.cuh">
+      <Filter>gpu_structs</Filter>
+    </ClInclude>
+    <ClInclude Include="Triangle.cuh">
+      <Filter>gpu_structs</Filter>
+    </ClInclude>
+    <ClInclude Include="Ray.cuh">
+      <Filter>gpu_structs</Filter>
+    </ClInclude>
+    <ClInclude Include="RayCast.cuh">
+      <Filter>kernels</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.cuh">
+      <Filter>gpu_structs</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

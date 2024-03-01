@@ -10,6 +10,18 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Scene.cuh" />
+    <ClInclude Include="RayCast.cuh" />
+    <ClInclude Include="Ray.cuh" />
+    <ClInclude Include="Triangle.cuh" />
+    <ClInclude Include="Vec3.cuh" />
+    <ClInclude Include="VectorAdd.cuh" />
+    <ClInclude Include="Main.cuh" />
+  </ItemGroup>
+  <ItemGroup>
+    <CudaCompile Include="Main.cu" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{9E3E846F-FD9E-4472-BF91-3A02774E7D76}</ProjectGuid>
     <RootNamespace>GPU_Ray_Tracing</RootNamespace>
@@ -76,9 +88,6 @@
       <TargetMachinePlatform>64</TargetMachinePlatform>
     </CudaCompile>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <CudaCompile Include="kernel.cu" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
     <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 12.3.targets" />
