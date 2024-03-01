@@ -26,12 +26,11 @@ int main()
 	h_triangle.vertecies[0] = { 0,0,0 };
 	h_triangle.vertecies[1] = { 1,1,0 };
 	h_triangle.vertecies[2] = { 2,0,0 };
-	h_triangle.normal = h_triangle.vertecies[1].subtract(h_triangle.vertecies[0]).cross(h_triangle.vertecies[2].subtract(h_triangle.vertecies[0])).normalised();
-
+	h_triangle.normal = { 0,0,-1 };
 
 
 	Ray h_ray;
-	h_ray.origin = { 0, 0, -1 };
+	h_ray.origin = { 0, 0, 1 };
 	h_ray.direction = { 0,0,1 };
 
 	Ray* d_ray;
@@ -43,9 +42,13 @@ int main()
 	cudaMemcpy(d_ray, &h_ray, sizeof(Ray), cudaMemcpyHostToDevice);
 	cudaMemcpy(d_triangle, &h_triangle, sizeof(Triangle), cudaMemcpyHostToDevice);
 
-	rayCastCUDA << < 1, 1, >> > (h_ray, h_triangle);
+	rayCastCUDA << <1, 1 >> > (d_ray, d_triangle);
 
 	cudaMemcpy(&h_ray, d_ray, sizeof(Ray), cudaMemcpyDeviceToHost);
+
+	std::cout << h_ray.collisionPoint.x;
+	std::cout << h_ray.collisionPoint.y;
+	std::cout << h_ray.collisionPoint.z;
 
 	printf("%d\n", c[1]);
 
