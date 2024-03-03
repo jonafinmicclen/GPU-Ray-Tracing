@@ -29,9 +29,6 @@
     <ClInclude Include="Main.cuh">
       <Filter>headers</Filter>
     </ClInclude>
-    <ClInclude Include="VectorAdd.cuh">
-      <Filter>gpu_kernels</Filter>
-    </ClInclude>
     <ClInclude Include="Vec3.cuh">
       <Filter>gpu_structs</Filter>
     </ClInclude>

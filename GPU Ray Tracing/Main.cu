@@ -12,6 +12,7 @@ int main(int argc, char** argv)
 {
     
 	camera->scene.triangles = createTriCube(5.0f).triangles;
+    camera->scene.point_lights.push_back({ -8,10,0 });
 	camera->initialiseRaysThroughScreen();
 
 	// Allocate memory on GPU

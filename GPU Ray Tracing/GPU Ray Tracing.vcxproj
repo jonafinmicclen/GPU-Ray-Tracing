@@ -21,7 +21,6 @@
     <ClInclude Include="Ray.cuh" />
     <ClInclude Include="Triangle.cuh" />
     <ClInclude Include="Vec3.cuh" />
-    <ClInclude Include="VectorAdd.cuh" />
     <ClInclude Include="Main.cuh" />
   </ItemGroup>
   <ItemGroup>
