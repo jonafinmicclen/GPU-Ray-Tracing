@@ -1,8 +1,9 @@
 #pragma once
 
+#include <vector>
 #include "Triangle.cuh"
-#include "vector"
 
-struct Scene {
+class ModelTriangle {
+public:
 	std::vector<Triangle> triangles;
 };

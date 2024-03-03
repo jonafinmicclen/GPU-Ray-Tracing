@@ -7,26 +7,26 @@ struct Vec3
 {
 	float x, y, z;
 
-    __device__ Vec3 normalised() const {
+    __host__ __device__ Vec3 normalised() const {
         return scalarDivide(length());
     }
 
-    __device__ float length() const {
+    __host__ __device__ float length() const {
         return sqrtf(x * x + y * y + z * z);
     }
 
     // Device method to add two vectors
-    __device__ Vec3 add(const Vec3& other) const {
+    __host__ __device__ Vec3 add(const Vec3& other) const {
         return { x + other.x, y + other.y, z + other.z };
     }
 
     // Device method to subtract two vectors
-    __device__ Vec3 subtract(const Vec3& other) const {
+    __host__ __device__ Vec3 subtract(const Vec3& other) const {
         return { x - other.x, y - other.y, z - other.z };
     }
 
     // Returns the cross product
-    __device__ Vec3 cross(const Vec3& other) const {
+    __host__ __device__ Vec3 cross(const Vec3& other) const {
         return Vec3({
             y * other.z - z * other.y,
             z * other.x - x * other.z,
@@ -34,16 +34,16 @@ struct Vec3
             });
     }
 
-    __device__ Vec3 scalarDivide(const float& scalar) const {
+    __host__ __device__ Vec3 scalarDivide(const float& scalar) const {
         return { x / scalar, y / scalar, z / scalar };
     }
 
-    __device__ Vec3 scalarMultiply(const float& scalar) const {
+    __host__ __device__ Vec3 scalarMultiply(const float& scalar) const {
         return { x * scalar, y * scalar, z * scalar };
     }
 
     // Device method to calculate the dot product of two vectors
-    __device__ float dot(const Vec3& other) const {
+    __host__ __device__ float dot(const Vec3& other) const {
         return x * other.x + y * other.y + z * other.z;
     }
 };

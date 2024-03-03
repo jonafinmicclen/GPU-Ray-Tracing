@@ -9,3 +9,7 @@
 #include "Vec3.cuh"
 #include "Triangle.cuh"
 #include "RayCast.cuh"
+
+#include "Camera.cuh"
+
+#include "ModelTriangle_Cube.cuh"

@@ -11,4 +11,12 @@ struct Triangle
 	Vec3 normal;
 	Vec3 color;
 
+	__host__ void calculateNormal() {
+		try {
+			normal = (vertecies[1].subtract(vertecies[0])).cross(vertecies[2].subtract(vertecies[0])).normalised();
+		}
+		catch (std::exception& e) {
+			std::cerr << "Error calculating normal: " << e.what() << std::endl;
+		}
+	}
 };

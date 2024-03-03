@@ -11,6 +11,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Camera.cuh" />
+    <ClInclude Include="ModelTriangle_Cube.cuh" />
+    <ClInclude Include="ModelStandard.cuh" />
+    <ClInclude Include="ModelTriangle.cuh" />
     <ClInclude Include="Scene.cuh" />
     <ClInclude Include="RayCast.cuh" />
     <ClInclude Include="Ray.cuh" />
@@ -20,6 +24,7 @@
     <ClInclude Include="Main.cuh" />
   </ItemGroup>
   <ItemGroup>
+    <CudaCompile Include="Camera.cu" />
     <CudaCompile Include="Main.cu" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

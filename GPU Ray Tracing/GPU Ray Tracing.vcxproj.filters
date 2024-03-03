@@ -7,15 +7,21 @@
     <Filter Include="headers">
       <UniqueIdentifier>{bd732217-7730-4adc-8377-fbb9ee47948b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="kernels">
-      <UniqueIdentifier>{bf6ce1ee-540a-4232-af6a-7fc6764d420d}</UniqueIdentifier>
-    </Filter>
     <Filter Include="gpu_structs">
       <UniqueIdentifier>{c34b7fbb-1e32-4ff3-85ae-c131da5c5f3e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="gpu_kernels">
+      <UniqueIdentifier>{bf6ce1ee-540a-4232-af6a-7fc6764d420d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="test_models">
+      <UniqueIdentifier>{f6127101-cba9-4326-b566-5c669577e538}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <CudaCompile Include="Main.cu">
+      <Filter>src</Filter>
+    </CudaCompile>
+    <CudaCompile Include="Camera.cu">
       <Filter>src</Filter>
     </CudaCompile>
   </ItemGroup>
@@ -24,7 +30,7 @@
       <Filter>headers</Filter>
     </ClInclude>
     <ClInclude Include="VectorAdd.cuh">
-      <Filter>kernels</Filter>
+      <Filter>gpu_kernels</Filter>
     </ClInclude>
     <ClInclude Include="Vec3.cuh">
       <Filter>gpu_structs</Filter>
@@ -36,10 +42,22 @@
       <Filter>gpu_structs</Filter>
     </ClInclude>
     <ClInclude Include="RayCast.cuh">
-      <Filter>kernels</Filter>
+      <Filter>gpu_kernels</Filter>
     </ClInclude>
     <ClInclude Include="Scene.cuh">
       <Filter>gpu_structs</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.cuh">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelTriangle.cuh">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelStandard.cuh">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelTriangle_Cube.cuh">
+      <Filter>test_models</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

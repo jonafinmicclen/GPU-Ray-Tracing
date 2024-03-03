@@ -1,3 +1,5 @@
+#pragma once
+
 #include "Vec3.cuh"
 #include "Triangle.cuh"
 
@@ -5,6 +7,7 @@ struct Ray {
 	Vec3 origin;
 	Vec3 direction;
 	Vec3 collisionPoint;
+	Vec3 color;
 
 	// returns the reflected ray
 	__device__ Ray reflect(const Vec3& normal, const Vec3& intersectionPoint) {
