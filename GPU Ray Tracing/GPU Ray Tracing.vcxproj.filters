@@ -13,7 +13,7 @@
     <Filter Include="gpu_kernels">
       <UniqueIdentifier>{bf6ce1ee-540a-4232-af6a-7fc6764d420d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="test_models">
+    <Filter Include="tests">
       <UniqueIdentifier>{f6127101-cba9-4326-b566-5c669577e538}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -57,7 +57,13 @@
       <Filter>headers</Filter>
     </ClInclude>
     <ClInclude Include="ModelTriangle_Cube.cuh">
-      <Filter>test_models</Filter>
+      <Filter>tests</Filter>
     </ClInclude>
+    <ClInclude Include="ModelPermutations.cuh">
+      <Filter>tests</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>

@@ -8,6 +8,7 @@ struct Ray {
 	Vec3 direction;
 	Vec3 collisionPoint;
 	Vec3 color;
+	bool has_collided = false;
 
 	// returns the reflected ray
 	__device__ Ray reflect(const Vec3& normal, const Vec3& intersectionPoint) {
