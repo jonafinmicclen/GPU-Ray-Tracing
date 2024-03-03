@@ -34,7 +34,7 @@ __global__ void traceRay(Ray* rays, Triangle* triangles, int* thread_per_block, 
 	Vec3 nearest_intersection_point;
 	bool intersected = false;
 
-	for (int triangle_index = 0; triangle_index < 12; ++triangle_index)
+	for (int triangle_index = 0; triangle_index < 24; ++triangle_index)
 	{
 		if (rays[i].intersectTriangle(triangles[triangle_index], intersection_point))
 		{
@@ -60,9 +60,10 @@ __global__ void traceRay(Ray* rays, Triangle* triangles, int* thread_per_block, 
 	Ray occlusion_ray;
 	occlusion_ray.direction = (point_lights[0].subtract(nearest_intersection_point)).normalised();
 	occlusion_ray.origin = nearest_intersection_point.add(occlusion_ray.direction.scalarMultiply(0.001));
-	for (int triangle_index = 0; triangle_index < 12; ++triangle_index)
+	float distance_to_light = occlusion_ray.origin.subtract(point_lights[0]).length();
+	for (int triangle_index = 0; triangle_index < 24; ++triangle_index)
 	{
-		if (occlusion_ray.intersectTriangle(triangles[triangle_index], intersection_point))
+		if (occlusion_ray.intersectTriangle(triangles[triangle_index], intersection_point)  && (intersection_point.subtract(occlusion_ray.origin)).length() < distance_to_light)
 		{
 			rays[i].color = { 0,0,0 };
 			return;

@@ -10,9 +10,11 @@ void init() {
 
 int main(int argc, char** argv)
 {
-    
+    // initialise camera and its scene
 	camera->scene.triangles = createTriCube(5.0f).triangles;
-    camera->scene.point_lights.push_back({ -8,10,0 });
+    std::vector<Triangle> cube_triangles = createTriCube(30.0f).triangles;
+    camera->scene.triangles.insert(camera->scene.triangles.end(), cube_triangles.begin(), cube_triangles.end());
+    camera->scene.point_lights.push_back({ -7,6,0 });
 	camera->initialiseRaysThroughScreen();
 
 	// Allocate memory on GPU
