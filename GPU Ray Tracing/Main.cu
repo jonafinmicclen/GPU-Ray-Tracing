@@ -14,7 +14,7 @@ int main(int argc, char** argv)
 	camera->scene.triangles = createTriCube(5.0f).triangles;
     std::vector<Triangle> cube_triangles = createTriCube(30.0f).triangles;
     camera->scene.triangles.insert(camera->scene.triangles.end(), cube_triangles.begin(), cube_triangles.end());
-    camera->scene.point_lights.push_back({ -7,6,0 });
+    camera->scene.point_lights.push_back({ -5,9,0 });
 	camera->initialiseRaysThroughScreen();
 
 	// Allocate memory on GPU
@@ -39,7 +39,7 @@ int main(int argc, char** argv)
         // Permutate object
         for (auto& triangle : camera->scene.triangles) {
             for (auto& vertex : triangle.vertecies) {
-                rotateVec3(vertex, 0.1, rot_vec);
+                rotateVec3(vertex, 0.01, rot_vec);
             }
             triangle.calculateNormal();
         }

@@ -25,6 +25,10 @@ struct Vec3
         return { x - other.x, y - other.y, z - other.z };
     }
 
+    __host__ __device__ Vec3 divide(const Vec3& other) const {
+        return { x / other.x, y / other.y, z / other.z };
+    }
+
     // Returns the cross product
     __host__ __device__ Vec3 cross(const Vec3& other) const {
         return Vec3({

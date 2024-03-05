@@ -69,7 +69,8 @@ __global__ void traceRay(Ray* rays, Triangle* triangles, int* thread_per_block, 
 			return;
 		}
 	}
-	rays[i].color = rays[i].color.scalarDivide((shortest_distance + (occlusion_ray.origin.subtract(point_lights[0])).length()) * 10);
+	float total_distance = (shortest_distance + (occlusion_ray.origin.subtract(point_lights[0])).length());
+	rays[i].color = rays[i].color.scalarDivide(total_distance * total_distance);
 
 
 
