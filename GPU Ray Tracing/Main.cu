@@ -52,7 +52,7 @@ int main(int argc, char** argv)
         for (int x = 0; x < camera->width; ++x) {
             for (int y = 0; y < camera->height; ++y) {
                 Ray* currentRay = &camera->rays_through_screen[index];
-                glColor3f(camera->rays_through_screen[index].color.x * 255, camera->rays_through_screen[index].color.y * 255, camera->rays_through_screen[index].color.z * 255);
+                glColor3f(currentRay->color.x * 255, currentRay->.color.y * 255, currentRay->color.z * 255);
                 glVertex2i(x, y);
 
                 ++index;
